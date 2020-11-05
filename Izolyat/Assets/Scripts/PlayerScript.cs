@@ -9,6 +9,9 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool faceRight = true;
+    int inMove = 0;
+    [SerializeField]
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
+       float moveX = Input.GetAxis("Horizontal");
+        
         rb.MovePosition(rb.position + Vector2.right*moveX*speed*Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -30,13 +34,26 @@ public class PlayerScript : MonoBehaviour
         else if (moveX < 0 && faceRight)
             flip();
 
+        if (moveX == 0)
+            inMove = 0;
+        else
+            inMove = 1;
 
-
+        ChangeAnimation();
     }
 
+    void ChangeAnimation()
+    {
+        animator.SetInteger("inMove", inMove);
+    }
     void flip()
     {
         faceRight = !faceRight;
         transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+    }
+
+    void InMovie()
+    {
+        
     }
 }

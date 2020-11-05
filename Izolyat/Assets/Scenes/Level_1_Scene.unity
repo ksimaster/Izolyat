@@ -432,8 +432,10 @@ Animation:
   m_GameObject: {fileID: 766071600}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 6fb96d674ec002742a429d21006d7dde, type: 2}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 631ff1cc142bd55489ad3fc0f839964e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6fb96d674ec002742a429d21006d7dde, type: 2}
+  - {fileID: 7400000, guid: 631ff1cc142bd55489ad3fc0f839964e, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -476,8 +478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8651558a0c896c45908cf9f2b69028e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 5
   jumpForce: 16000
+  animator: {fileID: 766071601}
 --- !u!50 &766071607
 Rigidbody2D:
   serializedVersion: 4
